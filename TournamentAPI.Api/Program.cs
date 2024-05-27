@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using TournamentAPI.Api;
 using TournamentAPI.Data.Data;
 var builder = WebApplication.CreateBuilder(args);
@@ -18,10 +17,10 @@ await app.SeedDataAsync();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
-{
+    {
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+    }
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
